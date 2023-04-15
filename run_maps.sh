@@ -5,5 +5,3 @@ for input_file in /data/Twitter\ dataset/geoTwitter20-*.zip; do
  
   nohup ./src/map.py --input_path=${input_file} &
 done
-
-echo "All map.py commands submitted. Check the output directory for results."
