@@ -16,11 +16,18 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import matplotlib.ticker as mtick
 import datetime as dt
-print(type(args), args.hashtags[0])
+
+#print(type(args), args.hashtags[0])
+
+# format args input
+
 day_counts = {day: 0 for day in range(1, 367)}
 dataset = {}
+
 string = args.hashtags[0]
 list = [s.strip("'") for s in string.split(", ")]
+
+# count hashtag totals for each day and create dictionary dataset
 for hashtag in list:
 	hashtag_counts = {}
 	for filename in os.listdir('./outputs/'):
