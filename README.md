@@ -15,7 +15,7 @@ The tweets are stored in a zip file for each day, which hold 24 texts files, one
 
 Use [MapReduce](https://en.wikipedia.org/wiki/MapReduce) to anaylze the dataset and produce graphs tracking the usage of pandemic related hashtags.
 
-## Code
+## Code Overview
 
 <code>map.py</code> processes the zip file for an indiviudal day. It tacks the usage of hashtags at the language and country level, creating a zip file for each day and level with all the tweets containing the desired hashtags.
 
@@ -31,7 +31,7 @@ $ ./src/visualize.py --input_path=reduced.lang --key='#coronavirus'
 <code>alternative_reduce.py</code> generates a line chart displaying their usage over 2020.
 It can be run as follows:
 ```
-$ ./src/alternative_reduce.py --hashtags='#covid19, #virus, #corona, #nurse'
+$ ./src/alternative_reduce.py --hashtags="'#covid19', '#virus', '#corona', '#nurse'"
 ```
 ## Results
 
