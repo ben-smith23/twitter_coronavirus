@@ -5,7 +5,6 @@ import argparse
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-import pandas as pd
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--input_path',required=True)
@@ -32,18 +31,16 @@ items = sorted(counts[args.key].items(), key=lambda item: (item[1],item[0]), rev
 #for k,v in items:
 #    print(k,':',v)
 
-items = sorted(counts[args.key].items(), key=lambda item: item[1], reverse=True)[:10]
+items = items[:10]
 keys = [item[0] for item in items]
 values = [item[1] for item in items]
+keys = keys[::-1]
+values = values[::-1]
 
-df = pd.DataFrame(dict(keys = list(keys),values = list(values)))
-print(df)
-
-df_sorted = df.sort_values('values')
 # create the bar graph
 
-fig, ax = plt.subplots()
-ax.bar(keys, values, data = df_sorted)
+plt.bar(range(len(keys)), values)
+plt.xticks(range(len(keys)), keys)
 if 'en' in keys:
     xlabel = 'Language'
     name = 'language'
@@ -54,8 +51,8 @@ else:
 if str(args.key) == '#coronavirus':
     pngkey = '_' + str(args.key)[1:]
 else:
-    pngkey = '_chinese'
+    pngkey = '_korean'
 
 plt.xlabel(xlabel)
 plt.ylabel('Times Mentioned in Tweets')
-plt.savefig(name + pngkey + 'test.png')
+plt.savefig(name + pngkey + '.png')
