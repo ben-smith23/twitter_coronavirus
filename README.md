@@ -24,32 +24,37 @@ Use [MapReduce](https://en.wikipedia.org/wiki/MapReduce) to anaylze the dataset 
 <code>visualize.py</code> generates a bar chart with the country/language on the x-axis, and the number of hashtag uses on the y-axis.
 
 For example, to generate a bar chart displaying \#cornavirus across languages in 2020, you would run the following command:
-'''
+```
 $ ./src/visualize.py --input_path=reduced.lang --key='#coronavirus'
-'''
+```
 
 <code>alternative_reduce.py</code> generates a line chart displaying their usage over 2020.
 It can be run as follows:
-'''
+```
 $ ./src/alternative_reduce.py --hashtags='#covid19, #virus, #corona, #nurse'
-'''
+```
 ## Results
 
 ### Plots made with <code>visualize.py</code>
 
 **\#coronavirus Usage by Language in 2020**
+
 <img src=language_coronavirus.png width=50% />
 
 **\#코로나바이러스 Usage by Language in 2020**
+
 <img src=language_korean.png width=50% />
 
 **\#coronavirus Usage by Country in 2020**
+
 <img src=country_coronavirus.png width=50% />
 
 **\#코로나바이러스 Usage by Country in 2020**
+
 <img src=country_korean.png width=50% />
 
 ### Plot made with <code>alternative_reduce.py</code>
 
 **Hashtag Usage Over 2020**
+
  <img src=line_plot.png width=50% />
