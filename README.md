@@ -17,7 +17,7 @@ Use [MapReduce](https://en.wikipedia.org/wiki/MapReduce) to anaylze the dataset 
 
 ## Code Overview
 
-<code>map.py</code> processes the zip file for an indiviudal day. It tacks the usage of hashtags at the language and country level, creating a zip file for each day and level with all the tweets containing the desired hashtags.
+<code>map.py</code> processes the zip file for an indiviudal day. It tracks the usage of hashtags at the language and country level, creating a zip file for each day and level with all the tweets containing the desired hashtags.
 
 <code>reduce.py</code> merges the outputs of <code>map.py</code> into a combined file. It produces one file for all tweets at the language and one at the country level.
 
